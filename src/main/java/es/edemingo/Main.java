@@ -1,7 +1,9 @@
 package es.edemingo;
 
 import es.edemingo.modelo.Serie;
+import es.edemingo.persistencia.ISeriesDAO;
 import es.edemingo.persistencia.SerieDAOFileImpl;
+import es.edemingo.util.SerieDATOFactory;
 
 import java.util.Scanner;
 
@@ -21,8 +23,13 @@ public class Main {
 
         scanner.close();
 
-        SerieDAOFileImpl sdf = new SerieDAOFileImpl();
-        sdf.create(new Serie(valor1,valor2, 8));
+        ISeriesDAO sdf = SerieDATOFactory.getSerieDAOImpl();
+        /*
+        //SerieDAOFileImpl sdf = new SerieDAOFileImpl();
+        //sdf.create(new Serie(valor1,valor2, 8));
+        */
+        Serie serie = sdf.read("Juego de Tronos");
+        System.out.println(serie);
 
     }
 }

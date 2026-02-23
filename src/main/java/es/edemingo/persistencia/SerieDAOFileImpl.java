@@ -1,11 +1,7 @@
 package es.edemingo.persistencia;
 
 import es.edemingo.modelo.Serie;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.List;
 
 public class SerieDAOFileImpl implements ISeriesDAO{
@@ -24,7 +20,14 @@ public class SerieDAOFileImpl implements ISeriesDAO{
 
     @Override
     public Serie read(String titulo) {
-        return null;
+        Serie serie = null;
+        try (FileInputStream fileIn = new FileInputStream(titulo + ".txt");
+             ObjectInputStream in = new ObjectInputStream(fileIn)) {
+            serie = (Serie)in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return serie;
     }
 
     @Override
