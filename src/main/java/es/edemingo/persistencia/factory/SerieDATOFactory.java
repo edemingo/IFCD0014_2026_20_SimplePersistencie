@@ -1,12 +1,28 @@
 package es.edemingo.persistencia.factory;
 
+import es.edemingo.persistencia.impl.SerieDAOFileImpl;
 import es.edemingo.persistencia.interfaces.ISeriesDAO;
 import es.edemingo.persistencia.impl.SeriaDAOSQLiteImpl;
+import es.edemingo.util.PropertiesReader;
 
 public class SerieDATOFactory {
 
-    public static ISeriesDAO getSerieDAOImpl(){
-        return new SeriaDAOSQLiteImpl();
-    }
+    private static final String FILE_NAME = "config.prop";
+    private static final String KEY = "PERSISTENCIE_TYPE";
 
+    public static ISeriesDAO getSerieDAOImpl(){
+
+        String daoType = PropertiesReader.readProperty(FILE_NAME, KEY);
+
+        PersistenceType persistenceType = PersistenceType.valueOf(daoType);
+
+        switch (persistenceType) {
+            case PersistenceType.FILE:
+                return new SerieDAOFileImpl();
+            case PersistenceType.SQLITE:
+                return new SeriaDAOSQLiteImpl();
+            default:
+                return new SeriaDAOSQLiteImpl();
+        }
+    }
 }
