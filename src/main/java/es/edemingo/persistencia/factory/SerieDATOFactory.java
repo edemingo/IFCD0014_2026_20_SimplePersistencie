@@ -1,8 +1,7 @@
-package es.edemingo.util;
+package es.edemingo.persistencia.factory;
 
-import es.edemingo.persistencia.ISeriesDAO;
-import es.edemingo.persistencia.SeriaDAOSQLiteImpl;
-import es.edemingo.persistencia.SerieDAOFileImpl;
+import es.edemingo.persistencia.interfaces.ISeriesDAO;
+import es.edemingo.persistencia.impl.SeriaDAOSQLiteImpl;
 
 public class SerieDATOFactory {
 

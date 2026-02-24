@@ -1,4 +1,4 @@
-package es.edemingo.persistencia;
+package es.edemingo.persistencia.interfaces;
 
 import es.edemingo.modelo.Serie;
 import java.util.List;

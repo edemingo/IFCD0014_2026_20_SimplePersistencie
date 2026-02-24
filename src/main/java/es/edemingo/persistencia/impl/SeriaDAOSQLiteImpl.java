@@ -1,5 +1,6 @@
-package es.edemingo.persistencia;
+package es.edemingo.persistencia.impl;
 import es.edemingo.modelo.Serie;
+import es.edemingo.persistencia.interfaces.ISeriesDAO;
 
 import java.sql.*;
 import java.util.List;

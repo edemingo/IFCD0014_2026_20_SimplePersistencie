@@ -1,10 +1,12 @@
-package es.edemingo.persistencia;
+package es.edemingo.persistencia.impl;
 
 import es.edemingo.modelo.Serie;
+import es.edemingo.persistencia.interfaces.ISeriesDAO;
+
 import java.io.*;
 import java.util.List;
 
-public class SerieDAOFileImpl implements ISeriesDAO{
+public class SerieDAOFileImpl implements ISeriesDAO {
 
     @Override
     public Serie create(Serie serie) {
