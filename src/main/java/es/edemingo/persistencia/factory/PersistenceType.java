@@ -3,7 +3,8 @@ package es.edemingo.persistencia.factory;
 public enum PersistenceType {
 
     FILE,
-    SQLITE
+    SQLITE,
+    POSTGRE
 
 }
 

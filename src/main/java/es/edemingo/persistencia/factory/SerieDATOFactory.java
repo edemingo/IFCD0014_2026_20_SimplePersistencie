@@ -1,6 +1,7 @@
 package es.edemingo.persistencia.factory;
 
 import es.edemingo.persistencia.impl.SerieDAOFileImpl;
+import es.edemingo.persistencia.impl.SerieDAOSPostgreImpl;
 import es.edemingo.persistencia.interfaces.ISeriesDAO;
 import es.edemingo.persistencia.impl.SeriaDAOSQLiteImpl;
 import es.edemingo.util.PropertiesReader;
@@ -21,6 +22,8 @@ public class SerieDATOFactory {
                 return new SerieDAOFileImpl();
             case PersistenceType.SQLITE:
                 return new SeriaDAOSQLiteImpl();
+            case PersistenceType.POSTGRE:
+                return new SerieDAOSPostgreImpl();
             default:
                 return new SeriaDAOSQLiteImpl();
         }
