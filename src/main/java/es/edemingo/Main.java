@@ -10,6 +10,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        /*
+        Scanner scanner = new Scanner(System.in);
+        crearSerie(scanner);
+        scanner.close();
+        */
+
+        ISeriesDAO sdf = SerieDATOFactory.getSerieDAOImpl();
+        sdf.create(new Serie("Superman", "Ciencia Ficcion",2));
+
+    }
+
+
+    public static void selectorSerie(){
+
         int action;
         boolean salir = false;
 

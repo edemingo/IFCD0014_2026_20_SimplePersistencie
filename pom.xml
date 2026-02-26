@@ -8,6 +8,19 @@
     <artifactId>IFCD0014_2026_20_SimplePersistencie</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <profiles>
+        <profile>
+            <id>Desarrollo</id>
+        </profile>
+        <profile>
+            <id>Preproduccion</id>
+        </profile>
+        <profile>
+            <id>Produccion</id>
+        </profile>
+
+    </profiles>
+
     <dependencies>
         <!-- Source: https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
         <dependency>

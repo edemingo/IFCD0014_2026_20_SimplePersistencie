@@ -4,6 +4,7 @@ import es.edemingo.persistencia.impl.SerieDAOFileImpl;
 import es.edemingo.persistencia.impl.SerieDAOSPostgreImpl;
 import es.edemingo.persistencia.interfaces.ISeriesDAO;
 import es.edemingo.persistencia.impl.SeriaDAOSQLiteImpl;
+import es.edemingo.util.AppPropertiesReader;
 import es.edemingo.util.PropertiesReader;
 
 public class SerieDATOFactory {
@@ -13,7 +14,7 @@ public class SerieDATOFactory {
 
     public static ISeriesDAO getSerieDAOImpl(){
 
-        String daoType = PropertiesReader.readProperty(FILE_NAME, KEY);
+        String daoType = AppPropertiesReader.readProperty(FILE_NAME, KEY);
 
         PersistenceType persistenceType = PersistenceType.valueOf(daoType);
 

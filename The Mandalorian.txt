@@ -1,8 +1,0 @@
-¨Ì sr es.edemingo.modelo.Serie”„YhÀ“: I numeroTemporadasL generot Ljava/lang/String;L tituloq ~ xp   t Ciencia Ficciont The Mandalorian
-
-
-PostgreSQL
-
-pass : test
-
-port : 5432
